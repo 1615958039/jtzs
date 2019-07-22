@@ -1,0 +1,19 @@
+/* ColorUi css组件库 */
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+
+/* Vant 组件库 */
+@import "/miniprogram_npm/vant-weapp/common/index.wxss";
+
+page{
+  background-color: #fff;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 

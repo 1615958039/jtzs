@@ -1,0 +1,60 @@
+<view class='search'>
+  <van-search
+    value="{{ search_keywords }}"
+    placeholder="表情包关键词"
+    use-action-slot
+    bind:search="onSearch"
+    shape="round"
+    background="#1989fa"
+  > 
+  </van-search>
+</view>
+
+<view hidden='{{ isload != false }}' class='hot' catchtap='uigo_more'>
+  <view class='hot_line'></view>
+  <text class='hot_text'>热图推荐</text>
+  <view class='hot_more'>
+    <text class='hot_text'>更多</text>
+    <van-icon class='img_item_view_like_icon' name="arrow" size='15px'/>
+  </view>
+</view>
+
+<view hidden='{{ isload != false }}' class='img_list'>
+  <view class='img_item' wx:for="{{ img_list }}" id='{{item.id}}' wx:key="{{item.id}}" catchtap='uigo'>
+    <image class='img_item_src' mode='aspectFit' src='{{item.url}}'></image>
+    <view class='img_item_view'>
+      <view hidden='{{ item.is_like == "true" }}' class='img_item_view_like'>
+        <van-icon class='img_item_view_like_icon' name="like-o" color='#808080' size='11px'/>
+        <text>{{ item.like }}</text>
+      </view>
+      <view hidden='{{ item.is_like == "false" }}' class='img_item_view_like'>
+        <van-icon class='img_item_view_like_icon' name="like" color='red' size='11px'/>
+        <text>{{ item.like }}</text>
+      </view>
+      <view class='img_item_view_see'>
+        <text>{{ item.see }}</text>
+        <van-icon class='img_item_view_like_icon' name="eye-o" color='#808080' size='11px'/>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<view hidden='{{ img_list.length > 0 || isload != false }}' class='notfound'>
+  <view class='notfound_img'>
+    <image class='notfound_img_src' src='../../img/404_a.png'></image>
+    <view><text class='chu'>Sorry</text></view>
+    <view><text>未找到相关表情包</text></view>
+    <view catchtap='onLoad' class='notfound_button'>
+      <van-button plain hairline loading type="danger" loading-text="点我刷新重试" />
+    </view>
+  </view>
+</view>
+
+
+
+<view hidden='{{ isload == false }}' class='load'>
+  <van-loading color="#1989fa" />
+  <text>飞速加载中...</text>
+</view>

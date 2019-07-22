@@ -1,0 +1,48 @@
+<view class='head'>
+  <image class='head_img' src='{{imginfo.admin_img}}'></image>
+  <view class='head_view'>
+    <view class='head_view_name'>{{imginfo.admin_name}}</view>
+    <view class='head_view_info'>{{imginfo.admin_signtext}}</view>
+  </view>
+</view>
+
+
+<view class='img' catchtap='seeimg'>
+  <image mode="aspectFit" class='img_src' src='{{imginfo.url}}'></image>
+</view>
+
+<view class='titles'>
+  <van-cell-group>
+    <van-field
+      value="{{ title }}"
+      label="关键词"
+      left-icon="edit"
+      placeholder="表情包关键词"
+      border="{{ false }}"
+      maxlength="20"
+      bind:change="onChange"
+    />
+  </van-cell-group>
+</view>
+
+
+<view class='buttons'>
+
+  <van-row custom-class="layout">
+    
+    <van-col span="10" offset="1">
+      <button catchtap='sh_no' class="cu-btn block bg-orange lg">
+        <text class="cuIcon-close" style='margin-right:5px'></text>违规
+      </button>
+    </van-col>
+
+    <van-col span="10" offset="2">
+      <button catchtap='sh_yes' class="cu-btn block bg-blue lg">
+        <text class="cuIcon-check" style='margin-right:5px'></text>发布
+      </button>
+    </van-col>
+
+
+  </van-row>
+</view>
+    

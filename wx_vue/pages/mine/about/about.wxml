@@ -1,0 +1,17 @@
+<view class='margin-xl bg-white padding-xl radius shadow-lg bgs'>
+  <view class='text-center margin-bottom text-lg  text-grey'>关于逗图助手</view>
+  <view class='text-content'>
+    <view>Hello！ 欢迎使用逗图助手~</view>
+
+    <view class='margin-top-sm'>该小程序由个人开发，目前功能还不完善，大家有意见或建议可以通过反馈功能提交给我。或者联系我的微信。后期版本会添加更多好玩实用的功能！希望大家多支持</view>
+    
+    <view class='margin-top-sm' catchtap='fz_wx'>
+      <text class="cuIcon-weixin lg text-green"></text> 微信：
+      <text class='text-red'>a12580wasd</text>(点击复制)
+    </view>
+    
+
+    <view class='margin-top-sm'>更多功能敬请期待！</view>
+
+  </view>
+</view>

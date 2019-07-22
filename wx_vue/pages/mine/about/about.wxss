@@ -1,0 +1,4 @@
+.bgs{
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}

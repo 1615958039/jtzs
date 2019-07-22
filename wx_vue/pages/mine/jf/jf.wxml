@@ -1,0 +1,10 @@
+  <view class=" padding-xs flex align-center">
+    <view class="flex-sub">
+      <view class="text-xl padding">
+        <text class="text-black text-bold">剩余积分:{{ jf }}</text>
+      </view>
+      <view class="padding">
+        积分功能将在后期版本添加
+      </view>
+    </view>
+  </view>

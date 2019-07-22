@@ -1,0 +1,18 @@
+<view class="cu-list grid col-4">
+  <view
+    class="cu-item"
+    wx:for="{{iconList}}"
+    wx:key
+    data-url='{{ item.uigo }}'
+    catchtap='click'
+  >
+    <view class="cuIcon-{{item.icon}} text-{{item.color}}">
+      <view class="cu-tag badge" wx:if="{{item.badge!=0}}">
+        <block wx:if="{{item.badge!=1}}">{{item.badge>99?"99+":item.badge}}</block>
+      </view>
+    </view>
+    <text>{{item.name}}</text>
+  </view>
+</view>
+
+

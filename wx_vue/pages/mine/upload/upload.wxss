@@ -1,0 +1,8 @@
+.uptitle{
+  margin-bottom: 8px;
+}
+.upload{
+  height: 38px;
+  margin-left: 4%;
+  margin-right: 4%;
+}

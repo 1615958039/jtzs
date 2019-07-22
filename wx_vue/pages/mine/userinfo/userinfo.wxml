@@ -1,0 +1,47 @@
+<view catchtap='img' class='headimg'>
+  <image class='headimg_src' src='{{userdata.img}}'></image>
+</view>
+
+<view class='div'>
+  <view class='div_text'>昵称:</view>
+  <view class='div_input'>
+    <input
+      bindinput='on_name'
+      placeholder="昵称/10字以内"
+      class='div_input_v'
+      value='{{ v_name }}'
+      confirm-type="done"
+      type='text'
+      maxlength="10"
+    />
+  </view>
+</view>
+
+<view class='div'>
+  <view class='div_text'>签名:</view>
+  <view class='div_input'>
+    <input
+      bindinput='on_signtext'
+      placeholder="个性签名/20个字以内"
+      class='div_input_v'
+      placeholder-class="placeholder"
+      value='{{ v_signtext }}'
+      confirm-type="done"
+      type='text'
+      maxlength="20"
+    />
+  </view>
+</view>
+
+<view class='save'>
+  <van-button
+    bind:click="save"
+    custom-class="save_button"
+    plain
+    loading="{{ is_save }}"
+    type="info"
+    loading-text="保存中..."
+  >保存</van-button>
+</view>
+
+

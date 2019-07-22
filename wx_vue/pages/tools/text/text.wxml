@@ -1,0 +1,24 @@
+<view class="f_text">
+  <textarea class='f_text_ipt' value='{{texts}}' bindinput="oc_texts" placeholder='请输入文本'></textarea>
+</view>
+
+
+<view class='but'>
+  <picker
+    class='but_picker'
+    mode="selector"
+    range="{{ picker_data }}"
+    range-key="text"
+    value='{{now_id}}'
+    bindchange="sle_it"
+  >
+    <text class='but_picker_text'>样式: {{picker_data[now_id].text}}</text>
+    <van-icon class='but_picker_icon' name="arrow-down" />
+  </picker>
+  <van-button size="large" class='but_do' catchtap='doit' type="primary">生成 </van-button>
+</view>
+
+<view class='f_text' catchtap='set_jqb'>
+  <textarea class='f_text_ipt' value='{{output}}' placeholder='结果输出区,点击即可复制文本框内容' disabled="true"></textarea>
+</view>
+

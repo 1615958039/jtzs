@@ -1,0 +1,57 @@
+<view class="body cu-list menu sm-border">
+
+  <view catchtap="uigo" data-url='like/like' class="cu-item arrow">
+    <button class="cu-btn content">
+      <text class="cuIcon-favorfill text-pink"></text>
+      <text class="text-grey">收藏的表情包</text>
+    </button>
+  </view>
+
+ <view catchtap="uigo" data-url='../tools/imglist/imglist' class="cu-item arrow">
+    <button class="cu-btn content">
+      <text class="cuIcon-discoverfill text-blue"></text>
+      <text class="text-grey">自制表情包</text>
+    </button>
+  </view>
+
+
+   <view catchtap="uigo" data-url='../tools/text/text' class="cu-item arrow">
+    <button class="cu-btn content">
+      <text class="cuIcon-edit text-cyan"></text>
+      <text class="text-grey">特殊文本制作</text>
+    </button>
+  </view>
+
+
+  <view open-type='feedback' data-url='bugs/bugs' class="cu-item arrow">
+    <button class="cu-btn content" open-type="feedback">
+      <text class="cuIcon-writefill text-cyan"></text>
+      <text class="text-grey">意见建议</text>
+    </button>
+    <view class="action">
+      <view class="cu-tag round bg-cyan light">反馈</view>
+    </view>
+  </view>
+
+  <view catchtap="zs" class="cu-item arrow">
+    <button class="cu-btn content">
+      <text class="cuIcon-rechargefill text-yellow"></text>
+      <text class="text-grey">支持作者</text>
+    </button>
+    <view class="action">
+      <view class="cu-tag round bg-yellow light">赞赏</view>
+    </view>
+  </view>
+
+  <view catchtap="uigo" data-url='about/about' class="cu-item arrow">
+    <button class="cu-btn content">
+      <text class="cuIcon-tagfill text-green"></text>
+      <text class="text-grey">关于</text>
+    </button>
+    <view class="action">
+      <text class="text-grey text-sm"></text>
+    </view>
+  </view>
+
+</view>
+

@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/search/search",
+    "pages/index/search/imginfo/imginfo",
+
+
+    "pages/mine/mine",
+    "pages/mine/like/like",
+    "pages/mine/about/about",
+
+
+    "pages/tools/imglist/imglist",
+    "pages/tools/imglist/imgshop/imgshop",
+    "pages/tools/text/text"
+    
+  ],
+  "tabBar": {
+    "color": "#7d7e80",
+    "selectedColor": "#1989fa",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/首页.png",
+        "selectedIconPath": "img/首页-fill.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "工具",
+        "iconPath": "img/图库.png",
+        "selectedIconPath": "img/图库-fill.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1989fa",
+    "navigationBarTitleText": "逗图助手",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-loading": "/miniprogram_npm/vant-weapp/loading/index",
+    "van-toast": "/miniprogram_npm/vant-weapp/toast/index",
+    "van-notice-bar": "/miniprogram_npm/vant-weapp/notice-bar/index",
+    "van-panel": "/miniprogram_npm/vant-weapp/panel/index",
+    "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index",
+    "van-picker": "/miniprogram_npm/vant-weapp/picker/index",
+    "van-field": "/miniprogram_npm/vant-weapp/field/index",
+    "van-transition": "/miniprogram_npm/vant-weapp/transition/index",
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
+    "van-tag": "/miniprogram_npm/vant-weapp/tag/index",
+    "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
+    "van-row": "/miniprogram_npm/vant-weapp/row/index",
+    "van-col": "/miniprogram_npm/vant-weapp/col/index",
+    "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
+    "van-button": "/miniprogram_npm/vant-weapp/button/index",
+    "van-dialog": "/miniprogram_npm/vant-weapp/dialog/index",
+    "van-search": "/miniprogram_npm/vant-weapp/search/index"
+  }
+}

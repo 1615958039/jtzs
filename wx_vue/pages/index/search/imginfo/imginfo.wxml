@@ -1,0 +1,48 @@
+<view class='head'> 
+  <image class='head_img' src='{{imginfo.admin_imgurl}}'></image>
+  <view class='head_view'>
+    <view class='head_view_name'>{{imginfo.admin_name}}</view>
+    <view class='head_view_info'>{{imginfo.admin_text}}</view>
+  </view>
+  <view class='head_num'>
+    <text>{{ imginfo.like }}</text>
+  </view>
+  <view catchtap='like' hidden='{{ imginfo.islike != "false" }}' class='head_like'>
+    <van-icon color='#fff' name="like-o" size="23px"/>
+  </view>
+  <view catchtap='like' hidden='{{ imginfo.islike == "false" }}' class='head_like'>
+    <van-icon color='red' name="like" size="23px"/>
+  </view>
+  
+</view>
+
+
+<view class='img' catchtap='seeimg'>
+  <image mode="aspectFit" class='img_src' src='{{imginfo.url}}'></image>
+</view>
+
+<view class='buttons'>
+  <van-row custom-class="layout">
+    
+    <van-col span="10" offset="1">
+      <van-button
+        custom-class="button"
+        style='width:100%'
+        plain
+        type="info"
+        open-type='share'
+      >分享</van-button>
+    </van-col>
+
+    <van-col span="10" offset="2">
+      <van-button
+        bind:click="seeimg"
+        custom-class="button"
+        style='width:100%'
+        plain
+        type="primary"
+      >查看 & 保存</van-button>
+    </van-col>
+  </van-row>
+</view>
+    

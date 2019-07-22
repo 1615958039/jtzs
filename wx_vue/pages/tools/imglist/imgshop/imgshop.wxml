@@ -1,0 +1,113 @@
+
+<van-row>
+  <van-col span="18" offset="3">
+    <view class='can_father'>
+      <canvas 
+        id='myCanvas'
+        canvas-id="myCanvas"
+        bindtouchstart="touchs"
+        bindtouchmove="touchs"
+      />
+    </view>
+
+    <van-tabs
+      duration="0.3"
+      swipe-threshold="5"
+      active="{{ active }}"
+      bind:click="tap_click"
+    >
+      <van-tab title="文本1"></van-tab>
+      <van-tab title="文本2"></van-tab>
+      <van-tab title="文本3"></van-tab>
+      <van-tab title="文本4"></van-tab>
+      <van-tab title="文本5"></van-tab>
+    </van-tabs>
+
+    <view>
+      <van-cell-group>
+        <van-field
+          icon="setting-o"
+          left-icon="edit"
+          value="{{ active_text }}"
+          placeholder="请输入文字"
+          bind:change="active_text_onchange"
+          type="text"
+          confirm-type="完成"
+          bind:click-icon="picker_show"
+          maxlength="15"
+        />
+      </van-cell-group>
+
+      
+
+
+    </view>
+
+
+
+
+    
+    <view class='active_color'>颜色:
+      <van-tag data-color="#000000" catchtap="active_color_do" size="large" round plain="{{ active_text_color!='#000000' }}" color="#000000">黑</van-tag>
+      <van-tag data-color="#ffffff" catchtap="active_color_do" size="large" round plain="{{ active_text_color!='#ffffff' }}" color="#F5F5F5" text-color="#DCDCDC">白</van-tag>
+      <van-tag data-color="#1989fa" catchtap="active_color_do" size="large" round plain="{{ active_text_color!='#1989fa' }}" color="#1989fa">蓝</van-tag>
+      <van-tag data-color="#008000" catchtap="active_color_do" size="large" round plain="{{ active_text_color!='#008000' }}" color="#008000">绿</van-tag>
+      <van-tag data-color="#FFA500" catchtap="active_color_do" size="large" round plain="{{ active_text_color!='#FFA500' }}" color="#FFA500">橙</van-tag>
+      <van-tag data-color="#FF0000" catchtap="active_color_do" size="large" round plain="{{ active_text_color!='#FF0000' }}" color="#FF0000">红</van-tag>
+      <van-tag data-color="#808080" catchtap="active_color_do" size="large" round plain="{{ active_text_color!='#808080' }}" color="#808080">灰</van-tag>
+    </view>
+
+    <view class='line'></view>
+    
+    <van-row custom-class="layout">
+      <van-col span="11">
+        <van-button
+          custom-class="button"
+          style='width:100%'
+          plain
+          type="info"
+          open-type='share'
+        >分享</van-button>
+      </van-col>
+      <van-col span="11" offset="2">
+        <van-button
+          bind:click="savecan"
+          custom-class="button"
+          style='width:100%'
+          plain
+          type="primary"
+        >预览 & 保存</van-button>
+      </van-col>
+    </van-row>
+    
+    
+
+
+  </van-col>
+</van-row>
+
+
+
+
+
+
+
+<cover-view hidden='{{!picker_show}}' style='height:{{picker_bg_h}}'></cover-view>
+<van-popup
+  duration="300"
+  show="{{picker_show}}"
+  position="bottom"
+  overlay="{{ false }}"
+  bind:close="onClose"
+>
+  <van-picker
+    custom-class="picker"
+    show-toolbar
+    title="字体尺寸(px)"
+    columns="{{ picker_value }}"
+    value-key="{{ picker_key }}"
+    default-index="{{ picker_key }}"
+    bind:cancel="picker_show"
+    bind:confirm="picker_yes"
+  />
+</van-popup>

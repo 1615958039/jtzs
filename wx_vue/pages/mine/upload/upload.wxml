@@ -1,0 +1,54 @@
+  <view class="cu-bar solid-bottom bg-white uptitle">
+		<view class="action">
+      <text class="cuIcon-title text-blue"></text>上传表情包
+      <text class="cuIcon-question text-blue" catchtap='showModal'></text>
+		</view> 
+		<view class="action">
+			<text>{{img_num}}/9</text>
+		</view>
+	</view>
+
+
+<view class="cu-modal bottom-modal {{q_show?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white">
+      <view class="action text-grey" bindtap="hideModal">取消</view>
+      <view class="action text-black">上传表情包说明</view>
+      <view class="action text-blue" bindtap="hideModal">确定</view>
+    </view>
+    <view class="padding-xl">
+      <view class="text-left padding">
+
+        <view>1.允许上传的图片格式：PNG,JPG,JPEG</view>
+        <view>2.允许上传的图片大小：5k ~ 2m</view>
+        <view>3.图片审核通过即可在首页或图片列表显示</view>
+        <view>4.表情包发布成功后可获得2积分</view>
+        <view>5.禁止上传任何违法违规图片</view>
+        <view>6.上传图片数量无限制，若等待审核的图片大于等于一百张时不允许上传，等待审核结束即可继续上传</view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+	<view class="cu-form-group">
+		<view class="grid col-3 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{img_num<9}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+
+  <button catchtap='upfile' class="cu-btn block line-blue upload">
+    <text class="cuIcon-upload"></text>
+    <text>上传</text>
+  </button>

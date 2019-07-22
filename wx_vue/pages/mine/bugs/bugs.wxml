@@ -1,0 +1,27 @@
+
+<view class='ipt_text'>
+  <view class='ipt_text_q'>问题和建议</view>
+  <view class='ipt_text_n'>{{ bugs_long }}/200</view>
+</view>
+
+<view class='ipt'>
+  <textarea
+    bindinput="ipt_change"
+    value='{{ bugs }}'
+    maxlength="200"
+    class='ipt_val'
+    placeholder="请填写10个字以上的问题描述以便我们提供更好的帮助"
+  />
+</view>
+
+
+<view class='save'>
+  <van-button
+    bind:click="save"
+    custom-class="save_button"
+    plain
+    loading="{{ is_save }}"
+    type="info"
+    loading-text="提交中..."
+  >提交</van-button>
+</view>

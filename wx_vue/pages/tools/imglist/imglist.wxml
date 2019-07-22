@@ -1,0 +1,49 @@
+<view hidden='{{ isload == true }}' class='img_list'>
+  <!-- 这里是从相册导入图片去作图页,只在第一页显示该图片 -->
+  <view hidden='{{ data.pagenow != 1 }}' class='img_item' catchtap='uigo_ca'>
+    <image mode='aspectFit' class='img_item_src' src='../../../img/zdy.png'></image>
+  </view> 
+  <view class='img_item' wx:for="{{ data.data }}" id='{{item.url}}' wx:key="{{item.id}}" catchtap='uigo'>
+    <image mode='aspectFit' class='img_item_src' src='{{item.url}}'></image>
+  </view>
+</view>
+
+
+<view hidden='{{ data.pagemax > 0 || isload != false }}' class='notfound'>
+  <view class='notfound_img'>
+    <image class='notfound_img_src' src='../../../img/404_a.png'></image>
+    <view><text class='chu'>Sorry</text></view>
+    <view><text>未找到相关表情包</text></view>
+    <view catchtap='onLoad' class='notfound_button'>
+      <van-button plain hairline loading type="danger" loading-text="点我刷新重试" />
+    </view>
+  </view>
+</view>
+
+
+
+<view hidden='{{ isload == false }}' class='load'>
+  <van-loading color="#1989fa" />
+  <text>飞速加载中...</text>
+</view>
+
+
+<view hidden='{{ data.length < 1 }}' class='foot'>
+  <view class='pagefoot'>
+    <view catchtap='foot' data-do='sta' class='{{ ( data.pagenow <= 1 )?"foot_star foot_off":"foot_star"  }}'>
+      <text>首页</text>
+    </view>
+    <view catchtap='foot' data-do='up' class='{{ ( data.pagenow <= 1 )?"foot_icon foot_off":"foot_icon"  }}'>
+      <van-icon class='foot_icon_img' name="arrow-left" size='13px'/>
+    </view>
+    <view wx:for="{{foot}}" wx:key="{{item}}" class='{{(item == data.pagenow)?"foot_num_now":"foot_num"}}' catchtap='foot' data-do='{{ item }}'>
+      <text>{{item}}</text>
+    </view>
+    <view class='{{ ( data.pagenow >= data.pagemax )?"foot_icon foot_off":"foot_icon"  }}'>
+      <van-icon class='foot_icon_img' size='13px' name="arrow"  catchtap='foot' data-do='dw' />
+    </view>
+    <view class='{{ ( data.pagenow >= data.pagemax )?"foot_end foot_off":"foot_end"  }}'  catchtap='foot' data-do='end' >
+      <text>尾页</text>
+    </view>
+  </view>
+</view>

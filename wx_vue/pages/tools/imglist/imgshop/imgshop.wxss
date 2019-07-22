@@ -1,0 +1,55 @@
+.can_father{
+  margin-top: 20rpx;
+  border: 1px solid #1989fa;
+  padding: 1% 1% 1% 1%;
+}
+canvas {
+  z-index: 1;
+  width: 100%;
+  height: 540rpx;
+}
+van-cell-group{
+  width: 100%;
+}
+.active_color{
+  margin-top:10px;
+  font-size:13px;
+  text-align: center;
+}
+.line{
+  margin-top: 10px;
+  width: 100%;
+  height: 1px;
+  background-color: #ebedf0;
+}
+.active_input{
+  display: flex;
+  flex-direction: row;
+}
+.active_input_setting{
+  height: 100%;
+}
+
+
+/* 这里是picker的遮罩层 */
+cover-view{ 
+  width: 100%;
+  top:0;
+  background:rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 99;
+  position: absolute; 
+}
+.picker{
+  height: 264px;
+}
+
+
+
+
+.layout{
+  padding-top: 10px;
+}
+.button{
+  width: 100%;
+}
